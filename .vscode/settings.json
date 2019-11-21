@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/ad454fba-9daa-482e-9e7a-965547f21632/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/norconsult-react-workshop-client",
+    "appService.deploySubpath": ""
+}
