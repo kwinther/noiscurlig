@@ -10,7 +10,9 @@ function Header() {
         <Nav className="mr-auto">
             <Link to="/">Home</Link> 
             <Link to="/about">About</Link>
-            <Link to="/characters">Characters</Link>
+            <Link to="/players">Players</Link>
+            <Link to="/teams">Teams</Link>
+            <Link to="/scoretable">Score Table</Link>
         </Nav>
       </Navbar>
     </div>

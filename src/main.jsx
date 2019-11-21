@@ -2,7 +2,9 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import About from "./about";
 import Home from "./home";
-import Characters from "./characters";
+import Players from "./players";
+import Teams from "./teams";
+import ScoreTable from "./scoretable";
 
 function Main() {
   return (
@@ -10,7 +12,9 @@ function Main() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/characters" component={Characters} />
+        <Route path="/players" component={Players} />
+        <Route path="/teams" component={Teams} />
+        <Route path="/scoretable" component={ScoreTable} />
       </Switch>
     </div>
   );
