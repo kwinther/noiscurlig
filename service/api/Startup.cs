@@ -1,16 +1,29 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TodoApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
+using TodoApi.Entities;
 
 namespace TodoApi
 {
     public class Startup
-    {       
+    {
+        public IConfigurationRoot Configuration { get; }
+
+        public Startup(IHostingEnvironment env)
+        {
+            this.Configuration = new ConfigurationBuilder()
+                .AddJsonFile("database.json")
+                .Build();
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase("TodoList"));
+            services.AddDbContext<curlingContext>(opt => opt.UseInMemoryDatabase("curling"));
+            services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase("TodoContext"));
             services.AddMvc();
 
             // Register the Swagger generator, defining one or more Swagger documents
@@ -30,6 +43,8 @@ namespace TodoApi
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
+
+            
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
